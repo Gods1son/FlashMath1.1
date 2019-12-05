@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget
         id="com.phonegap.FlashMath"
-        version="1.0.4"
+        version="1.0.5"
         xmlns="http://www.w3.org/ns/widgets"
         xmlns:gap="http://phonegap.com/ns/1.0">
     <name>Flash Math</name>
@@ -16,6 +16,7 @@
     <preference name="webviewbounce" value="false" />
 	<preference name="DisallowOverscroll" value="true" />
     <preference name="android-targetSdkVersion" value="28" />
+    <preference name="orientation" value="portrait" />
     <preference name="android-minSdkVersion" value="28" />
     <plugin name="cordova-plugin-appminimize" source="npm"/>
     <icon height="48" src="Images/android-icon-48x482.png" width="48"/>
