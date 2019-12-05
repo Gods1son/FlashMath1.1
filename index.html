@@ -1,0 +1,236 @@
+<html>
+	<head>
+    <meta name="viewport" content="width=device-width, height=device-height, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1">
+        <link rel="stylesheet" href="bootstrap.min.css">
+		<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+        <link href="noSlider.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/animate.min.css">
+        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="css/joint.css">
+        <script src="noSlider.js"></script>
+        <script src="jquery.min.js"></script>
+        <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+        <!--<script src="anime.min.js"></script>-->
+        <script src="index.js"></script>
+        <script src="popper.min.js"></script>
+        <script src="bootstrap.min.js"></script>
+        
+    </head>
+	<body>
+        <!--<div class="arcLeft"></div>
+        <div class="arcRight"></div>-->
+        
+        <div class="arcDown">
+        <div class="container pr-1 pl-1 pt-0" id="nickNameBoard">
+            <div class="row">
+                <div class="col-4 text-left">
+                    <i class="fa fa-bars" style="font-size:1.5em;" onclick="showSettings()"></i>
+                    <a href="home.html?nosplash" class="back">
+                        <i class="fa fa-home"></i>
+                            <!--<span>Home</span>-->
+                    </a>
+                </div>  
+                
+                <div class="col-8 text-right">
+                    <i class="sound fa fa-volume-off"></i>
+					<a id="goToMedals"><i class="fa fa-trophy"></i></a>
+                    <span id="welcomeName">Hi </span>
+                    <span id="nickname"></span>
+                </div>
+            </div>
+        </div>
+            
+        <div class="settingsPage">
+            <div class="col-12 pl-0 pr-0 position-absolute">
+                    <div class="settings text-center">Settings</div>
+                </div>
+            <div class="row mb-3">
+                <div class="col-5 pr-0">
+                    <div id="closeSettings" onclick="hideSettings()">
+                        <i class="fa fa-chevron-left"></i><span class="pl-1">Close</span>
+                    </div>
+                </div>
+                
+            </div>
+             <div class="row">
+                <div class="col-12 text-center mb-3">
+                        <span class="scoreLabel">Best Score: </span>
+                        <span id="bestScore" class="scoreLabel record">0</span>
+                 </div>   
+
+                <div class="col-12 text-center mt-3 mb-3">  
+                        <span class="scoreLabel">Best Streak: </span>
+                        <span id="bestStreak" class="scoreLabel record">0</span>
+                    
+                </div>
+                <div class="col-12">
+                    <div class="scoreLabel text-center">Number Range:
+                        <span id="low">1</span><span> - </span><span id="high">10</span>
+                    </div>
+                    <div class="col-10 mt-2 mb-3" style="margin-left:8.5%"> 
+                        <div id="range"></div>
+                    </div>
+                    
+                </div>
+                
+                <div class="col-12 text-center mt-3">
+                    <div class="scoreLabel">Number of cards:</div>
+                    <button class="arrows" onclick="cardNumber('-')"><</button>
+                    <span id="number">0</span>
+                    <button class="arrows" onclick="cardNumber('+')">></button>
+                </div>
+                    
+               <div class="col-12 text-center mt-3">
+                    <div class="scoreLabel">Growing cards: </div>
+                    <label class="switch" id="switchAlpha">
+                        <input type="checkbox" id="checkGrowing" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                    
+                <div class="col-12 text-center mt-3">
+                    <div class="scoreLabel">Dark Theme: </div>
+                    <label class="switch" id="switchTheme">
+                        <input type="checkbox" id="checkTheme">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                    
+                <div class="col-12 text-center mt-3">
+                    <div class="scoreLabel">Select Timer:</div>
+                    <select id="seconds">
+                        <option value="2000" selected>2 seconds</option>
+                        <option value="4000">4 seconds</option>
+                        <option value="6000">6 seconds</option>
+                        <option value="8000">8 seconds</option>
+                    </select>
+                </div>
+                  
+                
+            </div>
+        </div>
+           
+        <div class="container pl-1 pr-1">
+                <div class="text-center theScore">
+                        <span class="scoreLabel scorer">Your Score: </span>
+                        <span id="score" class="scorer">0</span> 
+                        <span id="divider" class="scorer">/</span> 
+                        <span id="maxScore" class="scorer">0</span>             
+                </div>  
+            
+                <div class="text-center">
+                    <span class="scorer scoreLabel">Streak: </span>
+                    <span id="streakCount" class="scorer">0</span>
+                </div>
+            
+            <div class="text-center">
+                    <span class="scorer scoreLabel">Number of cards: </span>
+                    <span id="numb" class="scorer">0</span>
+                </div>
+            
+        </div>    
+            
+        
+        </div>
+            
+        
+    </div>   
+        <div class="container pr-1 pl-1 timerBoard">
+            <div class="row">
+                <div class="col-9 text-center">
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 0%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
+                <div class="col-3 text-center"><span id="timer">0</span></div>  
+            </div>
+        </div>
+        <div id="buttonBoard">
+            <div class="text-center">
+                <button id="bringCards" onclick="getCards(false)" class="playButton">Start / Show New Cards</button>
+				<button id="showCards" class="playButton two disabled">Show Cards Again</button>    
+            </div>
+        </div>
+
+       <div id="cardHolderOutside" class="mt-3">
+           <div class="instruct">Solve the question below</div>
+           <div class="clearQuestion text-center">Solve the question below</div>
+           <div class="congratsPopUp">
+            <div class="popUpText"><span id="scoreMessage">+ 5</span><div id="congratsHolderMessage">Excellent</div></div>
+           </div>
+            <div class="cardHolder">
+            </div>
+        </div>
+            
+            
+        <!--<div class="congratsHolder">
+            <span id="congratsHolderMessage"></span>    
+        </div>-->    
+        
+    <div class="arcUp">
+        <div class="optionsHolder"></div>
+        <div class="bottomline text-center pt-1">Have fun doing maths...</div>    
+    </div>    
+            
+            <!-- Modal -->
+            <button type="button" class="btn btn-primary d-none" data-toggle="modal" data-target="#collectName" id="collectUserName">
+                Launch demo modal
+            </button>
+<!--collectName-->            
+<div class="modal fade" id="collectName" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document" style="top: 18vh;">
+    <div class="modal-content">
+      <div class="modal-header" style="background: #1035ff;color: white;">
+        <div class="text-center" style="width: 100%;">
+		<h3 class="modal-title" id="H2">Enter a Nickname</h3></div>
+        <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>-->
+      </div>
+      <div class="modal-body text-center">
+            <p><h4>Type a nickname below:</h4></p>
+            <p><input type="text" id="myNickName" style="font-size:3vh;color:#191938;font-weight: 500;text-align: center;"></p>
+      </div>
+      <div class="modal-footer" style="background: #1035ff;">
+        <button type="button" class="btn btn-light" data-dismiss="modal" style="font-size: 2vh;">Close</button>
+        <button id="saveNickName" onclick="saveNickName()" class="btn btn-success" style="font-size: 2vh;">Save Nickname</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--collectName-->
+
+<!--bestScore-->  
+<button type="button" class="btn btn-primary d-none" data-toggle="modal" data-target="#bestScoreDialog" id="bestScoreTrigger">
+                Launch demo modal
+            </button>
+          
+<div class="modal fade show" id="bestScoreDialog" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document" style="top: 18vh;">
+    <div class="modal-content">
+      <div class="modal-header" style="background: #1035ff;color: white;">
+        <div class="text-center" style="width: 100%;">
+		<h1 class="modal-title" id="H1" style="font-size: 5vh;">Congrats!!!</h1></div>
+        <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>-->
+      </div>
+      <div class="modal-body text-center">
+            <p><img id="winnerImage" src="Images/bestScore.gif" style="width: 25vh;"></p>
+            <p></p><h1 id="winnerMessage" style="font-size: 5vh;">New Best Score</h1><p></p>
+      </div>
+      <div class="modal-footer text-center" style="background: #1035ff;">
+        <div class="text-center" style="width: 100%;">
+			<button type="button" class="btn btn-light" data-dismiss="modal" style="font-size: 3vh;">Close</button>
+		</div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--bestScore-->
+<audio src="right.mp3" class="d-none" id="rightSound"></audio>
+<audio src="wrong.mp3" class="d-none" id="wrongSound"></audio>
+<audio src="background.mp3" class="d-none" loop></audio>
+
+	</body>
+</html>

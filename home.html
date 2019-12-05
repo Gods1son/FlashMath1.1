@@ -1,0 +1,149 @@
+<html><head>
+    <meta name="viewport" content="width=device-width, height=device-height, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1">
+        <link rel="stylesheet" href="bootstrap.min.css">
+		<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="home.css">
+        <link rel="stylesheet" href="css/animate.min.css">
+        <link rel="stylesheet" href="css/joint.css">
+        <script src="jquery.min.js"></script>
+        <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+        <script src="home.js"></script>
+        <script src="popper.min.js"></script>
+        <script src="bootstrap.min.js"></script>
+    </head>
+	<body>
+        <div id="splash">
+            <div class="extTable">
+                <div class="innerTable">
+                    <div id="splashText">Flash Math</div>
+                    <div class="progress load">
+                        <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+<div id="mainBody">
+    <div class="settingsPage">
+            <div class="col-12 pl-0 pr-0 position-absolute">
+                    <div class="settings text-center">Settings</div>
+                </div>
+            <div class="row mb-3">
+                <div class="col-5 pr-0">
+                    <div id="closeSettings" onclick="hideSettings()">
+                        <i class="fa fa-chevron-left"></i><span class="pl-1">Close</span>
+                    </div>
+                </div>
+                
+            </div>
+             <div class="row"> 
+   
+                <div class="col-12 text-center mt-3">
+                    <div class="scoreLabel">Dark Theme: </div>
+                    <label class="switch" id="switchTheme">
+                        <input type="checkbox" id="checkTheme">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+ 
+            </div>
+        </div>
+        <div class="container-fluid pl-1 pr-1 mr-0 ml-0 bgHiglight">
+    <div class="row">
+        <div class="col-12 text-right">
+            <div class="logo">Flash Math</div>
+        </div>
+    </div>
+</div>
+    <div class="arcDown">
+        
+
+<div class="container pl-1 pr-1" id="nickNameBoard">
+    
+            <div class="row">
+                <div class="col-12 text-left">
+					<a href="medals.html"><i class="fa fa-trophy fa-1.5x" style="font-size: 1.5em;"></i></a>
+                    <span id="welcomeName">Hi </span>
+                    <span id="nickname"></span>
+                </div>
+            </div>
+        </div>
+       
+        
+        <div class="container pl-1 pr-1 pt-1" id="scoreBoard">
+            <div class="row">
+                <div class="col-6 text-center pr-0">
+                    <span>Best Score</span><br>
+                    <span id="bestScore">0</span>    
+                </div>
+            <div class="col-6 text-center pl-0">
+                        <span>Best Streak</span><br>
+                        <span id="bestStreak">0</span>
+                    </div></div>
+            
+            
+        </div>  
+    </div>   
+        
+    <div id="chooseGame" class="container-fluid">
+        <div id="choosegameinner">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <button class="chooseType mt-0" data-type="1">Addition</button>
+                </div>     
+            </div>
+            
+            <div class="row">
+                <div class="col-12 text-center">
+                    <button class="chooseType" data-type="2">Subtraction</button>
+                </div>     
+            </div>
+            
+            <div class="row">
+                <div class="col-12 text-center">
+                    <button class="chooseType" data-type="3">Multiplication</button>
+                </div>     
+            </div>
+            
+            <div class="row">
+                <div class="col-12 text-center">
+                    <button class="chooseType" data-type="4">Mixed</button>
+                </div>     
+            </div>
+        </div>
+    </div>
+        
+    <div class="arcUp">
+        <div class="bottomline text-center pt-3">Have fun doing maths...</div>    
+    </div>
+</div>         
+            
+            <!-- Modal -->
+            <button type="button" class="btn btn-primary d-none" data-toggle="modal" data-target="#collectName" id="collectUserName">
+                Launch demo modal
+            </button>
+            
+<div class="modal fade" id="collectName" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog" role="document" style="top: 10vh;">
+    <div class="modal-content">
+      <div class="modal-header" style="background: #1035ff;color: white;">
+        <div class="text-center" style="width: 100%;">
+		<h3 class="modal-title" id="H2">Enter a Nickname</h3></div>
+        <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>-->
+      </div>
+      <div class="modal-body text-center">
+            <p></p><h4>Type a nickname below:</h4><p></p>
+            <p><input type="text" id="myNickName" style="font-size:3vh;color:#191938;font-weight: 500;text-align: center;"></p>
+      </div>
+      <div class="modal-footer" style="background: #1035ff;">
+        <button type="button" class="btn btn-light" data-dismiss="modal" style="font-size: 3vh;">Close</button>
+        <button id="saveNickName" onclick="saveNickName()" class="btn btn-success" style="font-size: 3vh;">Save Nickname</button>
+      </div>
+    </div>
+  </div>
+</div>
+	
+
+</body></html>

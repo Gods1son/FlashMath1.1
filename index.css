@@ -1,0 +1,575 @@
+*{
+    margin:0;
+    padding: 0;
+}
+
+@font-face {
+  font-family: grobold;
+  src: url(css/GROBOLD.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: playtime;
+  src: url(css/playtime.ttf) format('truetype');
+}
+
+body, html{
+   overflow-x: hidden !important;
+   /*background: #f40000 !important;
+    background: url("simple.jpg");*/
+   overflow-y: hidden !important;
+    font-family: playtime;
+}
+
+a:focus
+{
+	color:inherit !important;
+	text-decoration: none !important;	
+}
+
+.arcLeft{
+    width: 20vw;
+    height: 100vh;
+    position: absolute;
+    /*background: #F82847;*/
+    background: white;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-right: 2vw solid #10185B;
+    /*border-left: 1vw solid red;*/
+}
+
+.arcRight{
+    right:0;
+    width: 20vw;
+    height: 100vh;
+    position: absolute;
+    /*background: red;*/
+    background: white;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-left: 2vw solid #10185B;
+    /*border-right: 1vw solid red;*/
+}
+
+.arcDown{
+    background: #B52952;  /*#46DEC5;*/
+    position: relative;
+}
+
+#goToMedals{
+    font-size: 1.5em;
+    color:gold;
+}
+
+.sound{
+    font-size: 1.5em;
+    color:aliceblue;
+}
+
+.arcUp{
+    /*background: #B52952;  #46DEC5;*/
+    position: absolute;
+    border: 0;
+    width: 100%;
+    bottom: 0;
+}
+
+.bottomline{
+    font-size: 1.5em;
+    letter-spacing: 1;
+    color: white;
+    font-weight: 800;
+    background: #B52952;
+}
+
+#nickNameBoard{
+    color: white;
+    font-size: 1.3em;
+    font-weight: 900;
+}
+
+#choosegame{
+    position: absolute;
+    height: 100%;
+    top: 0;
+}
+
+#closeSettings{
+    color: red;
+    font-weight: 600;
+    font-size: 1.5em;
+}
+
+.sliderCustom{
+    width: 60%;
+    margin-left: 20%;
+}
+
+#choosegameinner{
+    width: 100%;
+    height: 50%;
+    overflow: visible;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.scorer{
+    font-size: 2.8vh;
+    color: white;
+    font-weight: 900;
+}
+
+.record{
+    border: 2px groove #000022;
+    padding: 5px 20px;
+    font-weight: 800;
+}
+
+.record.white{
+    border: 2px groove white;
+}
+
+.timerBoard{
+    
+}
+
+.instruct{
+    font-size: 1.3em;
+    text-align: center;
+    font-weight: 800;
+    color: black;
+    display:none;
+}
+
+.settingsPage{
+    position: absolute;
+    background: white;
+    width: 100%;
+    z-index: 999;
+    height: 100vh;
+    left: -105vw;
+    top: 0;
+    transition: background-color 1000ms linear;
+}
+
+#scoreBoard{
+    /*border: 4px ridge orangered;*/
+    padding: 10px 2px;
+}
+
+#bestscoreboard{
+    float:left;
+}
+
+#streakBoard
+{
+	float: left;
+    margin-left: 35%;	
+}
+
+#congratsHolderMessage{
+    /*display: none;
+    color: #000022;
+    font-family: grobold;
+    letter-spacing: 1.5px;*/
+    font-size: 2em;
+    font-weight: 900;
+    margin-top: -18px;
+}
+
+.popUpText{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    color: #1035ff;
+    transform: rotate(-45deg);
+}
+
+#scoreMessage{
+    font-family: grobold;
+    font-size: 4em;
+}
+
+#otherScores{
+    float:right;
+}
+
+#maxScores
+{
+	float: right;
+    clear: both;
+    border-top: 2px solid deeppink;
+    padding-top: 12px;
+    margin-top: 10px;
+}
+
+.scoreLabel{
+    /*font-size: 3vh;
+    font-weight: 400;
+    color: #000022;
+    letter-spacing: 2px;*/
+}
+
+.scoreMiddle
+{
+    position: relative;
+}
+
+.scoreDesign{
+    border: 5px solid gold;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 2em;
+    font-weight: 900;
+    color: orangered;
+}
+
+.arrows{
+    border: none;
+    background: #f40000;
+    color: white;
+    border-radius: 3px;
+    font-size: 3vh;
+    cursor: pointer;
+    padding: 0 20px;
+}
+
+#optionsBoard{
+    text-align: center;
+}
+
+#seconds{
+    font-size: 3vh;
+    border: 2px solid #f40000;
+    font-weight: 600;
+    padding: 5px 10px;
+}
+
+#number{
+    border: 2px solid #000022;
+    padding: 0 20px;
+    border-radius: 4px;
+    color: #000022;
+    font-size: 3vh;
+}
+#number.white{
+    border: 2px solid white;
+}
+
+.playButton{
+    /*border: 1px solid #1035ff;*/
+    border:none;
+    font-size: 1em;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white !important;
+    font-weight: 800;
+    margin-right: 5px;
+    white-space: nowrap;
+    background: #1035ff;
+}
+
+.playButton.two{
+    background: #B52952;
+}
+
+.playButton.white{
+    
+    color: white;
+}
+
+.white{
+    color: white !important;
+}
+
+.chooseType{
+    border: 2px groove blue;
+    cursor: pointer;
+    border-radius: 5px;
+    color: black;
+    font-weight: 500;
+    width: 90%;
+    box-shadow: 5px 4px 0px 2px yellow;
+    margin-top: 25px;
+    background: gold;
+    font-size: 3em;
+}
+
+.chooseType:hover{
+    color:red;
+}
+
+.playButton.two.disabled{
+    color: white !important;
+    cursor: not-allowed;
+    /*border: 2px solid grey;*/
+    opacity: 0.5;
+    background: darkgrey;
+}
+
+.cardSignSpan{
+    vertical-align: middle;
+    display: table-cell;
+    position: relative;
+}
+
+.clearQuestion{
+    font-size: 1.2em;
+    color: #B52952;
+    font-weight: 800;
+    font-family: sans-serif;
+    display:none;
+}
+
+#buttonBoard{
+    text-align: center;
+    /*margin: 2.5vh 0px 2.1vh;*/
+    height: auto; /*5vh*/
+    /*font-size: 1.8vh;*/
+}
+
+#timer{
+    font-size: 2em;
+    font-weight: 900;
+    color:#007bff;
+}
+
+.clearfix{
+    clear:both;
+}
+
+.flipCard{
+    max-width:120px;
+    height: 95%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    /*position: absolute;
+     0141*/
+    background: white;
+    color: white;
+    display: inline-table;
+    text-align: center;
+    margin-top: 2.5%;
+    margin-right: 2px;
+}
+
+.absFlipCard{
+    position: absolute;
+}
+
+.flipCard.move {
+  /*margin-left: -100px; .animate width*/
+    left:155px;
+}
+
+.cardSpan{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.cardHolder2{
+    /*position: relative;
+    margin-top: 10px;
+    height: 200px;*/
+    width: 100%;
+  overflow: auto;
+  margin: auto;
+  position: absolute;
+  top: 5%;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 90%;
+    /*border:5px solid yellow;*/
+}
+
+.cardHolder{
+    position: absolute;
+    height: 45vh;
+    width:100%;
+    text-align: center;
+}
+
+#cardHolderOutside{
+    position: relative;
+    height: 50vh;
+    overflow: hidden;
+    width: 98%;
+    margin-left:1%;
+    /*border-top: 1vh groove #43109c;
+    border-top-left-radius: 35%;*/
+    border-bottom: 5px ridge #B52952; /*#1035ff;*/
+    border-top: 5px ridge #B52952;
+    border-top-left-radius: 10%;
+    border-top-right-radius: 10%;
+    /*border-bottom-left-radius: 15%;
+    border-bottom-right-radius: 15%;*/
+}
+
+.answers{
+    border-radius: 5px;
+    padding: 1vh 4.5vw;
+    /*height: 90%;*/
+    font-size: 3vh;
+    font-weight: 600;
+    margin: 0% 3px;
+    background: #1035ff;
+    color: white !important;
+    white-space: nowrap;
+    border: none;
+}
+
+.progress{
+    height: 40%;
+    position: absolute;
+    width: 100%;
+    top: 28%;
+}
+
+.back{
+    color: aliceblue;
+    letter-spacing: 1;
+    height: 100%;
+    font-size: 1.5em;
+    font-weight: 900;
+}
+
+#low, #high{
+    font-weight: 900;
+    color:red;
+    font-size: 1.1em;
+}
+
+#lowest, #highest{
+    font-weight: 900;
+    font-size: 3vh;
+}
+
+.optionsHolder{
+    text-align: center;
+    height: 10vh;
+    padding-top: 1.5vh;
+    overflow-x: scroll;
+    position: relative;
+    background: white;
+}
+
+.congratsHolder{
+    text-align: center;
+    font-size: 3.5vh;
+    min-height: 5vh;
+}
+
+.center{
+    text-align: center;
+}
+
+/*for award won*/
+.shake {
+  /* Start the shake animation and make the animation last for 0.5 seconds */
+  animation: shake 0.5s; 
+
+  /* When the animation is finished, start again */
+  animation-iteration-count: 2;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+
+
+.congratsPopUp{
+    display: none;
+    border: 3px groove #1035ff;
+    background-color: white;
+    padding-top: 50%;
+    position: absolute;
+    left: 25%;
+    top: calc(11vh + 10%);
+    width: 50%;
+    z-index: 999;
+    transform: skew(180deg, 180deg) rotate(45deg);
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    body{
+        font-size: 24px;
+    }
+    .congratsPopUp{
+        width: 40%;
+        padding-top: 40%;
+        left: 30%;
+    }
+  
+}
+
+/*for award won*/
+
+@media screen and (orientation: landscape) {
+  .playButton {
+    font-size: 1.5em;
+  }
+    .scorer{
+        font-size: 3.8vh !important;
+    }
+    .theScore{
+        width:50% !important;
+        float: left;
+    }
+    .congratsHolder{
+        font-size: 5vh;
+        height: 6vh;
+    }
+    .settingsPage .col-12{
+        margin-top: 10px !important;
+    }
+    .settingsPage{
+        padding-top: 5px !important;
+    }
+    .settings
+    {
+		height: 5.7vh;
+		font-size:3.5vh;	
+    }
+    #nickNameBoard{
+        height: 7vh;
+        font-size:3.5vh;
+    }
+    #cardHolderOutside
+    {
+		height:40vh;
+    }
+    .cardHolder
+    {
+		height: 35vh;	
+    }
+    
+    .instruct{
+        font-size: 3.5vh;
+    }
+    .answers{
+        font-size: 4.5vh;
+        font-weight: 700;
+        padding: 1.3vh 4.5vw;
+    }
+}

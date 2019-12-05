@@ -1,0 +1,413 @@
+*{
+    margin:0;
+    padding: 0;
+}
+
+@font-face {
+  font-family: grobold;
+  src: url(css/GROBOLD.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: playtime;
+  src: url(css/playtime.ttf) format('truetype');
+}
+
+body, html{
+   overflow-x: hidden !important;
+   /*background: #f40000 !important;
+    background: url("simple.jpg");*/
+   overflow-y: hidden !important;
+    font-family: playtime;
+    background: url(Images/box.jpg);
+    background-size: cover;
+}
+
+a:focus
+{
+	color:inherit !important;
+	text-decoration: none !important;	
+}
+
+.arcDown{
+    background: #1984d9;
+    position: relative;
+}
+
+.bgHiglight{
+    background: #ffffff9e;
+}
+
+.arcLeft{
+    width: 20vw;
+    height: 100vh;
+    position: absolute;
+    /*background: #F82847;*/
+    background: white;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-right: 2vw solid #000022; /*#10185B;*/
+    /* border-left: 1vw solid #f40000; */
+}
+
+.arcRight{
+    right:0;
+    width: 20vw;
+    height: 100vh;
+    position: absolute;
+    /*background: red;*/
+    background: white;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-left: 2vw solid #000022; /*#10185B;*/
+    /* border-right: 1vw solid #f40000; */
+}
+
+
+.arcUp{
+    background: #1984d9;
+    position: absolute;
+    border: 0;
+    width: 100%;
+    bottom: 0;
+}
+
+
+.arcUp .par{
+    position: absolute;
+    height: 100%;
+    color: white;
+    text-align: center;
+    width: 90%;
+    margin: 0 5%;
+    font-size: 3vh;
+    display: table;
+}
+
+.par div{
+    display: table-cell;
+    vertical-align: bottom;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+#nickNameBoard{
+    font-size: 4vh;
+    color: white;
+    height: 6vh;
+    letter-spacing: 5px;
+    border-bottom: 3px ridge #fe4a49;
+}
+
+#choosegame{
+    /*position: absolute;
+    height: 100%;
+    top: 0;*/
+    height: 60vh;
+    display: table;
+}
+
+#choosegameinner{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#scoreBoard{
+    /* border: 4px ridge orangered; */
+    /* padding: 10px 2px; 
+    bottom: 15%;
+    position: absolute;*/
+    height: 10vh;
+}
+
+#scoreBoard .row{
+    height: 5vh;
+    font-size: 2.5vh;
+    color: white;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+#bestscoreboard{
+    float:left;
+}
+
+#streakBoard
+{
+	float: left;
+    margin-left: 35%;	
+}
+
+#congratsHolderMessage{
+	/*opacity: 0;
+    transition: opacity 1s ease-in-out;	*/
+    display: none;
+}
+
+#otherScores{
+    float:right;
+}
+
+#maxScores
+{
+	float: right;
+    clear: both;
+    border-top: 2px solid deeppink;
+    padding-top: 12px;
+    margin-top: 10px;
+}
+
+.scoreLabel{
+    font-size: 1.6em;
+    color: white;
+    letter-spacing: 5px;
+    font-weight: 800;
+}
+
+.scoreMiddle
+{
+    position: relative;
+}
+
+.scoreDesign{
+    border: 5px solid gold;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 2.5em;
+    font-weight: 900;
+    color: orangered;
+}
+
+.arrows{
+    border: none;
+    background: midnightblue;
+    color: white;
+    border-radius: 3px;
+    font-size: 1.1em;
+    box-shadow: 1px 2px 4px 0px deeppink;
+    cursor: pointer;
+}
+
+#optionsBoard{
+    text-align: center;
+}
+
+#seconds{
+    font-size: 1em;
+    border: 2px solid deeppink;
+    font-weight: 600;
+    padding: 5px 10px;
+}
+
+#number{
+    font-size: 1.2em;
+    border: 2px solid deeppink;
+    padding: 0 10px;
+    margin-left: -0.5px;
+    margin-right: -2.5px;
+    border-radius: 4px;
+}
+
+.playButton{
+    border: 2px double midnightblue;
+    font-size: 1em;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 10px;
+    color: midnightblue;
+    font-weight: 800;
+    box-shadow: 1px 2px 4px 0px dimgrey;
+    margin-right: 10px;
+}
+
+.chooseType{
+    cursor: pointer;
+    border-radius: 30px;
+    color: white;
+    width: 100%;
+    margin-top: 25px;
+    background: #000022;
+    font-size: 4vh;
+    letter-spacing: 1.5px;
+}
+
+.chooseType:hover{
+    color:red;
+}
+
+.playButton:disabled{
+    color:grey;
+    cursor: not-allowed;
+    border: 2px double red;
+}
+
+.cardSignSpan{
+    vertical-align: middle;
+    display: table-cell;
+    position: relative;
+}
+
+#buttonBoard{
+    text-align: center;
+    margin: 10px;
+}
+
+#timer{
+    font-size: 2em;
+    color: red;
+    font-weight: 900;
+}
+
+#timerBoard{
+    text-align: center;
+}
+
+.clearfix{
+    clear:both;
+}
+
+.flipCard{
+    max-width:150px;
+    height: 150px;
+    border-radius: 5px;
+    position: absolute;
+    box-shadow: 0 1px 3px 2px rgba(0, 0, 0, 0.5); /*0141*/
+    background: white;
+    display: table;
+    font-size: 4em;
+    text-align: center;
+    -webkit-transition: all 5s ease;
+  -moz-transition: all 5s ease;
+  -o-transition: all 5s ease;
+  -ms-transition: all 5s ease;
+  transition: all 5s ease;
+}
+
+.flipCard.move {
+  /*margin-left: -100px; .animate width*/
+    left:155px;
+}
+
+.cardSpan{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.cardholder{
+    position: relative;
+    margin-top: 10px;
+    /*height: 200px;*/
+}
+
+.answers{
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 50px;
+    height: 50px;
+    font-size: 1.3em;
+    margin: 2px 3px;
+    box-shadow: 1px 2px 4px 0px;
+}
+
+.back{
+    color: white;
+    border: 1px solid white;
+    padding: 0 10px;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+#low, #high{
+    font-weight: 900;
+    color:red;
+    font-size: 1.1em;
+}
+
+#lowest, #highest{
+    font-weight: 900;
+}
+
+.optionsHolder{
+    text-align: center;
+}
+
+.congratsHolder{
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: 900;
+    min-height: 35px;
+}
+
+.center{
+    text-align: center;
+}
+
+.awardNumber
+{
+	width: 100%;
+    border: 2px solid #191938;
+    border-radius: 10px;
+    height: 8vh;
+    position:relative;
+    background: #191938;
+    color: #fe4a49;
+    text-align: center;
+    font-size: 4vh;
+    margin-left: 20%;
+    border-bottom-left-radius: 30%;
+    border-bottom-right-radius: 30%;
+    border-bottom: 6px ridge #fe4a49;
+}
+
+.awardText
+{
+	font-size: 2vh;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    letter-spacing: 1.5;
+    font-weight: lighter;
+}
+
+.award
+{
+	margin-bottom: 20;
+}
+
+.awardWin
+{
+	color: goldenrod;
+    font-size: 2vh !important;
+    top: 0;
+    position: absolute;
+    left: 5%;	
+}
+
+.awardMixedLabel{
+    font-size: 2vh;
+    color: white;
+    font-weight: 700;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+}
+
+@media screen and (orientation: landscape) 
+{
+	.awardNumber
+	{
+		height: 10vh;	
+	}
+	.awardText
+	{
+		font-size: 3vh;	
+	}
+	.awardMixedLabel
+	{
+		font-size: 4vh;	
+	}
+    .arcUp{
+        border-top: 4vh double #E24241;
+    }
+}
